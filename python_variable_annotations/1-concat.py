@@ -3,7 +3,7 @@
 
 
 def concat(str1: str, str2: str) -> str:
-    """concatination 
+    """concatination
 
     Args:
        str1: first string
