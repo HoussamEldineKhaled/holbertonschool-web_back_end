@@ -10,7 +10,7 @@ def sum_list(input_list: list[float]) -> float:
 
     Returns: sum of floats
     """
-    sum: float = 0
+    count: float = 0
     for i in range(0, len(input_list)):
-        sum += input_list[i]
-    return sum
+        count += input_list[i]
+    return count
