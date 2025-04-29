@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-from typing import Generator
 import asyncio
 import random
 
 
-async def async_generator() -> Generator[float, None, None]:
+async def async_generator():
     """
     Async generator
     """
