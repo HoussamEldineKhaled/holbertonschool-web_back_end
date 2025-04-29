@@ -3,7 +3,7 @@ import asyncio
 import random
 
 
-async def async_generator():
+def async_generator():
     """
     Async generator
     """
