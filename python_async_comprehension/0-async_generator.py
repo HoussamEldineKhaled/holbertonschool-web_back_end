@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import asyncio
 import random
-import time
 
 
 async def async_generator():
