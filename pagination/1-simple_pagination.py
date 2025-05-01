@@ -5,7 +5,6 @@
 import csv
 import math
 from typing import List
-from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> tuple:
@@ -41,13 +40,25 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            assert page > 0 and isinstance(page, int), "page must be a positive integer"
-            assert page_size > 0 and isinstance(page_size, int), "page_size must be a positive integer"
+        """
+        Get a page from the dataset.
+        
+        Args:
+            page (int): The page number (1-indexed).
+            page_size (int): The number of items per page.
+ 
+        Returns: list dataset
+        """
 
-            dataset = self.dataset()
+        assert isinstance(page, int)
+        assert isinstance(page_size, int)
+        assert page > 0
+        assert page_size > 0
 
-            start, end = index_range(page, page_size)
+        dataset = self.dataset()
 
-            if start >= len(dataset):
-                return []
-            return dataset[start:end]
+        start, end = index_range(page, page_size)
+
+        if start >= len(dataset):
+            return []
+        return dataset[start:end]
