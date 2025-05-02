@@ -40,7 +40,29 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-            """
+        """
+        Args:
+           index: the index of the page
+           page_size: number of items in a page
 
+        Returns: dictionairy
+        """
 
-"""
+        assert index is None or (isinstance(index) and index >= 0)
+        assert isinstance(page_size, int) and page_size > 0
+
+        indexed_data = self.indexed_dataset()
+        data = []
+        current_index = index if index is not None else 0
+        next_index = current_index
+        count = 0
+
+        while count < page_size and next_index < len(indexed_data):
+            if next_index in index_data:
+                data.append(indexed_data[next_index])
+                count += 1
+            next_index += 1
+
+        return {'index': current_index, 'data': data,
+                'page_size': len(data),
+                'next_index': next_index if next_index < len(indexed_data) else None}
