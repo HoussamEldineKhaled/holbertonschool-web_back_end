@@ -1,4 +1,4 @@
 // update
-db.school.update({query: { name : "Holberton school"},
+db.school.updateMany({query: { name : "Holberton school"},
 update: { $set: { address: "972 Mission street"}},
 new: true})
