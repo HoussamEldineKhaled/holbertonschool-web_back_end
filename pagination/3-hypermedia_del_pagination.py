@@ -48,7 +48,7 @@ class Server:
         Returns: dictionairy
         """
 
-        assert index is None or (isinstance(index) and index >= 0)
+        assert index is None or (isinstance(index, int) and index >= 0)
         assert isinstance(page_size, int) and page_size > 0
 
         indexed_data = self.indexed_dataset()
@@ -58,7 +58,7 @@ class Server:
         count = 0
 
         while count < page_size and next_index < len(indexed_data):
-            if next_index in index_data:
+            if next_index in indexed_data:
                 data.append(indexed_data[next_index])
                 count += 1
             next_index += 1
