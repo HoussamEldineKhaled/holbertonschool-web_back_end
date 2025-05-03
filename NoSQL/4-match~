@@ -1,2 +1,0 @@
-// find all that match it
-db.school.find()
