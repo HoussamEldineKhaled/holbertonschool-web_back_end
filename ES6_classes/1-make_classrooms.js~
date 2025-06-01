@@ -1,8 +1,0 @@
-import ClassRoom from './0-classroom.js';
-
-
-const initializeRooms = () => {
-    return [new ClassRoom(19), new CLassRoom(20), new CLassRoom(34)];
-};
-
-export default initializeRooms;
