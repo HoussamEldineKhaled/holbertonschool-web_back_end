@@ -1,4 +1,3 @@
-
 class Currency {
     constructor(code, name) {
 	this._code = code;
@@ -6,7 +5,7 @@ class Currency {
     }
 
     get code(){
-	return this._name;
+	return this._code;
     }
 
     set code(value){
