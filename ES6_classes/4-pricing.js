@@ -3,7 +3,7 @@ import Currency from './3-currency';
 class Pricing {
   constructor(amount, currency) {
     this._amount = amount;
-    this._currency = new Currency(currency);
+    this._currency = currency;
   }
 
   get amount() {
@@ -27,7 +27,7 @@ class Pricing {
   }
 
   convertPrice(amount, conversionRate) {
-    return this._amount * conversionRate;
+    return amount * conversionRate;
   }
 }
 
