@@ -12,3 +12,5 @@ class Airport{
 	return this._code;
     }
 }
+
+export default Airport;
