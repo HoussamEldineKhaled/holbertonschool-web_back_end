@@ -3,7 +3,7 @@ function updateStudentGradeByCity(studentList, city, newGrades) {
 	student => {
 	    const grading = newGrades.find(grade => grade.studentId === student.id);
 
-	    return {...student, grade: grading ? grading : 'N/A'};
+	    return {...student, grade: grading ? grading.grade : 'N/A'};
 	}
     );
 };
