@@ -2,7 +2,7 @@
  *  Display STDOUT message.
  * @param {String} message 
  */
-function displayMessage(message){
+const displayMessage = (message) => {
     process.stdout.write(message)
 }
 
