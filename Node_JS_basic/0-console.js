@@ -3,7 +3,7 @@
  * @param {String} message 
  */
 const displayMessage = (message) => {
-    process.stdout.write(message)
+    console.log(message)
 }
 
 module.exports = displayMessage;
