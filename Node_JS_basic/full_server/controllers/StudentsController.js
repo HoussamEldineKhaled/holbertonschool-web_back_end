@@ -21,18 +21,20 @@ class StudentsController {
     });
   }
 
+  // eslint-disable-next-line consistent-return
   static getAllStudentsByMajor(request, response) {
-    const { major } = request.query;
-    if (!major || major !== 'CS' || major !== 'SWE') {
-      response.status(500).send('Major parameter must be CS or SWE');
+    const { major } = request.params;
+    if (!major || (major !== 'CS' && major !== 'SWE')) {
+      return response.status(500)
+        .send('Major parameter must be CS or SWE');
     }
     readDatabase(process.argv[2]).then((data) => {
       const students = data[major] || [];
       const firstName = students.join(', ');
-      response.status(200).send(`List: ${firstName}`);
-    }).catch(() => {
-      response.status(500).send('Cannot load the database');
-    });
+      return response.status(200).send(`List: ${firstName}`);
+    })
+      .catch(() => response.status(500)
+        .send('Cannot load the database'));
   }
 }
 
